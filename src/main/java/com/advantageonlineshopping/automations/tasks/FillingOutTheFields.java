@@ -7,13 +7,13 @@ import net.serenitybdd.screenplay.Tasks;
 import net.serenitybdd.screenplay.actions.Click;
 import net.serenitybdd.screenplay.actions.Enter;
 
-import static com.advantageonlineshopping.automations.userinterfaces.BuyLaptopLocators.*;
+import static com.advantageonlineshopping.automations.userinterfaces.FieldsToCanBuy.*;
 
-public class Buy implements Task {
+public class FillingOutTheFields implements Task {
 
     Data data;
 
-    public Buy(Data data) {
+    public FillingOutTheFields(Data data) {
         this.data = data;
     }
 
@@ -26,12 +26,11 @@ public class Buy implements Task {
                 Click.on(CHECKOUT_BUTTON),
                 Click.on(NEXT_BUTTON),
                 Enter.theValue(data.getSafePayUserName()).into(SAFE_PAY_USERNAME),
-                Enter.theValue(data.getSafePayPassword()).into(SAFE_PAY_PASSWORD),
-                Click.on(PAY_NOW)
+                Enter.theValue(data.getSafePayPassword()).into(SAFE_PAY_PASSWORD)
         );
     }
 
-    public static Buy aLaptop(Data data){
-        return Tasks.instrumented(Buy.class, data);
+    public static FillingOutTheFields toCanBuy(Data data) {
+        return Tasks.instrumented(FillingOutTheFields.class, data);
     }
 }

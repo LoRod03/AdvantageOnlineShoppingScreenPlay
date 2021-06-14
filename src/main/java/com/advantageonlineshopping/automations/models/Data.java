@@ -6,12 +6,14 @@ public class Data {
     private String password;
     private String safePayUserName;
     private String safePayPassword;
+    private String validateText;
 
-    public Data(String userName, String password, String safePayUserName, String safePayPassword) {
+    public Data(String userName, String password, String safePayUserName, String safePayPassword, String validateText) {
         this.userName = userName;
         this.password = password;
         this.safePayUserName = safePayUserName;
         this.safePayPassword = safePayPassword;
+        this.validateText = validateText;
     }
 
     public String getUserName() {
@@ -28,5 +30,9 @@ public class Data {
 
     public String getSafePayPassword() {
         return safePayPassword;
+    }
+
+    public String getValidateText() {
+        return validateText;
     }
 }
