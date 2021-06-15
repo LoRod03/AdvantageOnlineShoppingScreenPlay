@@ -7,13 +7,16 @@ public class Data {
     private String safePayUserName;
     private String safePayPassword;
     private String validateText;
+    private String laptopReference;
 
-    public Data(String userName, String password, String safePayUserName, String safePayPassword, String validateText) {
+    public Data(String userName, String password, String safePayUserName, String safePayPassword,
+                String validateText, String laptopReference) {
         this.userName = userName;
         this.password = password;
         this.safePayUserName = safePayUserName;
         this.safePayPassword = safePayPassword;
         this.validateText = validateText;
+        this.laptopReference = laptopReference;
     }
 
     public String getUserName() {
@@ -34,5 +37,9 @@ public class Data {
 
     public String getValidateText() {
         return validateText;
+    }
+
+    public String getLaptopReference(){
+        return laptopReference;
     }
 }
