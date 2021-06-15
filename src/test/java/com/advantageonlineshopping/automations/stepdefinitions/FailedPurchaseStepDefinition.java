@@ -12,6 +12,7 @@ import net.thucydides.core.annotations.Managed;
 import org.openqa.selenium.WebDriver;
 
 import java.util.List;
+import java.util.concurrent.TimeUnit;
 
 public class FailedPurchaseStepDefinition {
 
@@ -23,7 +24,9 @@ public class FailedPurchaseStepDefinition {
     @Before
     public void setUp(){
         fredy.can(BrowseTheWeb.with(hisDriver));
+        hisDriver.manage().window().maximize();
         fredy.wasAbleTo(OpenTheBrowser.on());
+        hisDriver.manage().timeouts().implicitlyWait(8 , TimeUnit.SECONDS);
     }
 
     @When("^I look for a computer that is not in stock$")
