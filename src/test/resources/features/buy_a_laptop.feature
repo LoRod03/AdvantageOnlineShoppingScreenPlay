@@ -32,7 +32,9 @@ Feature: Buy a laptop
       | <laptopReference> |
 
     Then it should show a text that describes that there is no result for the search
+      | validateSearch   |
+      | <validateSearch> |
 
     Examples:
-      | userName  | password | laptopReference   |
-      | User1reto | 1234As#  | Apple Macbook Pro |
+      | userName  | password | laptopReference   | validateSearch |
+      | User1reto | 1234As#  | Apple Macbook Pro | No results for |

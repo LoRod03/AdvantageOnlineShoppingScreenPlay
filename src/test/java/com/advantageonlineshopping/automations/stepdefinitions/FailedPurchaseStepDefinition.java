@@ -1,12 +1,14 @@
 package com.advantageonlineshopping.automations.stepdefinitions;
 
 import com.advantageonlineshopping.automations.models.Data;
+import com.advantageonlineshopping.automations.questions.LaptopSearch;
 import com.advantageonlineshopping.automations.tasks.LookingFor;
 import com.advantageonlineshopping.automations.tasks.OpenTheBrowser;
 import cucumber.api.java.Before;
 import cucumber.api.java.en.Then;
 import cucumber.api.java.en.When;
 import net.serenitybdd.screenplay.Actor;
+import net.serenitybdd.screenplay.GivenWhenThen;
 import net.serenitybdd.screenplay.abilities.BrowseTheWeb;
 import net.thucydides.core.annotations.Managed;
 import org.openqa.selenium.WebDriver;
@@ -35,7 +37,7 @@ public class FailedPurchaseStepDefinition {
     }
 
     @Then("^it should show a text that describes that there is no result for the search$")
-    public void itShouldShowATextThatDescribesThatThereIsNoResultForTheSearch() {
-
+    public void itShouldShowATextThatDescribesThatThereIsNoResultForTheSearch(List<Data> dataList) {
+        fredy.should(GivenWhenThen.seeThat(LaptopSearch.result(dataList.get(0))));
     }
 }
