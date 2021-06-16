@@ -37,14 +37,19 @@ public class BuyALaptopStepDefinition {
         fredy.attemptsTo(Login.intoPage(dataList.get(0)));
     }
 
-    @When("^i validate the laptop reference$")
-    public void iValidateTheLaptopReference(List<Data> dataList) {
+    @When("^I do all the process required to make the purchase$")
+    public void iDoAllTheProcessRequiredToMakeThePurchase(List<Data> dataList) {
         fredy.attemptsTo(FillingOutTheFields.toCanBuy(dataList.get(0)));
+    }
+
+    @Then("^i validate the laptop reference$")
+    public void iValidateTheLaptopReference(List<Data> dataList) {
         fredy.should(GivenWhenThen.seeThat(Validating.laptopReference(dataList.get(0))));
     }
 
-    @Then("^i can buy the laptop$")
-    public void iCanBuyTheLaptop() {
+    @Then("^I can pay for the laptop$")
+    public void iCanPayForTheLaptop() {
         fredy.attemptsTo(ToPayNow.theLaptop());
     }
+
 }

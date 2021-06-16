@@ -37,7 +37,7 @@ public class FailedPurchaseStepDefinition {
     }
 
     @Then("^it should show a text that describes that there is no result for the search$")
-    public void itShouldShowATextThatDescribesThatThereIsNoResultForTheSearch(List<Data> dataList) {
-        fredy.should(GivenWhenThen.seeThat(LaptopSearch.result(dataList.get(0))));
+    public void itShouldShowATextThatDescribesThatThereIsNoResultForTheSearch() {
+        fredy.should(GivenWhenThen.seeThat(LaptopSearch.result()));
     }
 }

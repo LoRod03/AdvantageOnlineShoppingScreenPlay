@@ -8,16 +8,12 @@ import net.serenitybdd.screenplay.questions.Text;
 
 public class LaptopSearch implements Question {
 
-    Data data;
-
-    public LaptopSearch(Data data) {
-        this.data = data;
-    }
+    private final String NO_SEARCH_RESULT = "No results for";
 
     @Override
     public Object answeredBy(Actor actor) {
 
-        if(Text.of(SearchResultLocator.SEARCH_RESULT).viewedBy(actor).asString().contains(data.getValidateSearch())){
+        if(Text.of(SearchResultLocator.SEARCH_RESULT).viewedBy(actor).asString().contains(NO_SEARCH_RESULT)){
             return true;
         }
         else {
@@ -25,7 +21,7 @@ public class LaptopSearch implements Question {
         }
     }
 
-    public static LaptopSearch result(Data data){
-        return new LaptopSearch(data);
+    public static LaptopSearch result(){
+        return new LaptopSearch();
     }
 }
