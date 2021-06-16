@@ -9,8 +9,7 @@ import org.junit.runner.RunWith;
 @CucumberOptions(
         features = "src/test/resources/features/buy_a_laptop.feature",
         glue = "com.advantageonlineshopping.automations.stepdefinitions",
-        //tags = {"@successfulPurchase"},
-        tags = {"@failedPurchase"},
+        tags = {"@successfulPurchase"},
         snippets = SnippetType.CAMELCASE
 )
 public class BuyALaptopRunner {
